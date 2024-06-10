@@ -1,0 +1,25 @@
+#Question 1
+import numpy as np
+# Create a random vector of size 15 with integers in the range 1-20
+random_vector = np.random.randint(1, 20, size=15)
+print(random_vector)
+# Reshape the array to 3 by 5
+reshaped_array = random_vector.reshape(3, 5)
+# Print array shape
+print("Array shape before replacing max values:")
+print(reshaped_array.shape)
+# Replace the max in each row by 0
+max_indices = np.argmax(reshaped_array, axis=1)
+for i in range(len(reshaped_array)):
+    reshaped_array[i, max_indices[i]] = 0
+# Print array shape after replacing max values
+print("\nArray shape after replacing max values:")
+print(reshaped_array.shape)
+# Create a 2-dimensional array of size 4 x 3 (composed of 4-byte integer elements)
+#array_2d = np.zeros((4, 3), dtype=np.int32)
+array_2d = np.random.randint(low=-100, high=100, size=(4, 3),dtype=np.int32)
+print(array_2d)
+# Print shape, type, and data type of the array
+print("\nArray shape:", array_2d.shape)
+print("Array type:", type(array_2d))
+print("Array data type:", array_2d.dtype)
